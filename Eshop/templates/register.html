@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-md-6 px-0" style="background:url('/static/images/4.jpg');background-size:100% 100%;">
+      <div class="h-100" style="background:rgba(0,0,0,0.5)">
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h1>Sign up Here</h1>
+      <form action="" method="post">{% csrf_token %}
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <label>First Name</label>
+              <input type="text" class="form-control" name="fname" placeholder="First Name">
+            </div>
+            <div class="col-md-6">
+              <label>Last Name</label>
+              <input type="text" class="form-control" name="lname" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="from-group">
+          <label for="">Username</label>
+          <input type="text" class="form-control"name="uname" placeholder="Enter Username">
+        </div>
+        <div class="from-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control"name="pwd" placeholder="Enter Password">
+        </div>
+        <div class="from-group">
+          <label for="">Email</label>
+          <input type="email" class="form-control"name="email" placeholder="Enter Email">
+        </div>
+        <div class="from-group">
+          <label for="">Contact Number</label>
+          <input type="number" class="form-control"name="contact" placeholder="Enter Mobile No">
+        </div><br>
+        <div class="from-group">
+          <label for="">User Type</label>
+          <select class="form-control" name="utype">
+            <option value="cust">I am Customer</option>
+            <option value="sell">I am Seller</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" name="" value="Sign Up" class="btn btn-success">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% if status %}
+    <script>
+        alert("{{status}}");
+        window.location="/"
+    </script>
+{% endif %}
+
+{% endblock body %}

@@ -1,0 +1,24 @@
+{% extends "dashboard_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block dashboard %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto bg-light my-4">
+      <h1>Add Product</h1>
+      <form class="" action="" enctype="multipart/form-data" method="post">{% csrf_token  %}
+        {% bootstrap_form form %}
+        <input type="submit" name="" value="Add Product" class="btn btn-primary">
+      </form>
+
+    </div>
+  </div>
+</div>
+{% if status %}
+   <script>
+     alert("{{status}}");
+     window.location="/my_products/"
+   </script>
+
+{% endif %}
+{% endblock %}
